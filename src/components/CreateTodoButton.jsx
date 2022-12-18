@@ -3,13 +3,14 @@ import '../style/CreateButton.css';
 
 const CreateTodoButton = (props) => {
 
-  const onclickButton = () =>{
+  /*const onclickButton = () =>{
     props.setOpenModal(prevState => !prevState );
-  }
+  }*/
 
   return (
     <button className="CreateTodoButton"
-    onClick={onclickButton}>+</button>
+    onClick={//onclickButton
+    props.onClick}>+</button>
   )
 }
 

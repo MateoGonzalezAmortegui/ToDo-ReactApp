@@ -1,9 +1,12 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 import '../style/TodoForm.css';
 
 const TodoForm = (props) => {
 
-    const [newTodoValue, setTodoValue] = React.useState('');
+    const navigate = useNavigate();
+    
+const [newTodoValue, setTodoValue] = React.useState(props.defaultTodoText || '');
 
     //** Event onchange
     const onChange = (event) =>{
@@ -11,7 +14,8 @@ const TodoForm = (props) => {
     }
 
     const onCancel = () =>{
-        props.setOpenModal(prevState => !prevState );
+        //props.setOpenModal(prevState => !prevState );
+        navigate(-1);
     }
 
     const onSubmit = (event) =>{
@@ -21,11 +25,12 @@ const TodoForm = (props) => {
             return; 
         }
         props.addTodo(newTodoValue);
+        navigate(-1);
     }
 
     return (
         <form onSubmit={onSubmit}>
-            <label>Write you new TODO</label>
+            <label>{props.label}</label>
 
             {/** For do bigger the input and not horizontal*/}
             <textarea
@@ -47,7 +52,7 @@ const TodoForm = (props) => {
                 type="submit"
                 className="TodoForm-button TodoForm-button--add"
                 >
-                Add
+                {props.submitText}
                 </button>
             </div>
         </form>

@@ -1,0 +1,1 @@
+{(!!props.totalTodos && !props.searchedTodos.length) && props.onEmptySearchResults(props.searchText)}

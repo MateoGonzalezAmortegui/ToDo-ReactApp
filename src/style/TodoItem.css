@@ -42,7 +42,17 @@
   .Icon-check:hover {
     color: #4caf50;
   }
-  
+
+
+  .Icon-edit {
+    position: absolute;
+    top: -24px;
+    right: 48px;
+  }
+  .Icon-edit:hover {
+    color: #cc07f8;
+  }
+
   .Icon-delete {
     position: absolute;
     top: -24px;
